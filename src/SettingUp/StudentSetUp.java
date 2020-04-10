@@ -15,7 +15,7 @@ public class StudentSetUp {
         return this;
     }
 
-    public StudentSetUp age(Date birthdate) {
+    public StudentSetUp birthdate(String birthdate) {
         student.birthdate = birthdate;
         return this;
     }
@@ -25,5 +25,9 @@ public class StudentSetUp {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public Student build() {
+        return student;
     }
 }

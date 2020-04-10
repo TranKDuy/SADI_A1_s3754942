@@ -22,7 +22,7 @@ public class Students {
             String[] template = {
                     "ID: " + student.id,
                     "Name: " + student.name,
-                    "Age: " + student.birthdate
+                    "Birthdate: " + student.birthdate
             };
 
             String content = String.valueOf(position) + ") " + String.join(", ", template);
