@@ -13,7 +13,7 @@ public class HeaderMain {
         courseheader.header();
     }
 
-    public void CourseFooteroutput() {
+    public void CourseEndlineoutput() {
         studentheader.endline();
     }
 
@@ -21,7 +21,7 @@ public class HeaderMain {
         courseheader.header();
     }
 
-    public void StudentFooteroutput() {
+    public void StudentEndlineoutput() {
         studentheader.endline();
     }
 }
