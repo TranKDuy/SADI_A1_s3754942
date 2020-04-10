@@ -14,7 +14,7 @@ public class EnrollmentData {
     }
 
     public void read() {
-        int position = 0;
+        int position = 1;
         String listString = "";
         for (StudentEnrollment studentEnrollment : studentEnrollments) {
             listString += position + " |STUDENT: " + studentEnrollment.getStudent().name + "\n";

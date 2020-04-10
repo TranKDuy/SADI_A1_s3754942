@@ -17,7 +17,7 @@ public class Courses {
     }
 
     public void show() {
-        int position = 0;
+        int position = 1;
         for(Course course: courses) {
             String[] template = {
                     "ID: " + course.id,
