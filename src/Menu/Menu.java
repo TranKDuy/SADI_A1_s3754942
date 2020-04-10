@@ -1,4 +1,4 @@
-package MenuLoop;
+package Menu;
 import java.util.ArrayList;
 import java.util.List;
 public class Menu {

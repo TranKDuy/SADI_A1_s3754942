@@ -1,4 +1,4 @@
-package MenuLoop;
+package Menu;
 
 public interface Loop {
     public boolean hasNext();
