@@ -1,12 +1,11 @@
 package Menu;
-import Header.HeaderMain;
+import Header.TOC;
 import RootClass.Course;
 import RootClass.Student;
 import RootClass.StudentEnrollment;
 import Form.Courses;
 import Form.Students;
 
-import java.util.Objects;
 import java.util.Scanner;
 public class Interface implements GuidanceLayout {
     public Courses courses;
@@ -31,7 +30,7 @@ public class Interface implements GuidanceLayout {
 
     @Override
     public StudentEnrollment takeStudentEnrollment() {
-        HeaderMain table = new HeaderMain();
+        TOC table = new TOC();
 
         table.StudentHeaderoutput();
         students.show();
@@ -41,15 +40,15 @@ public class Interface implements GuidanceLayout {
         courses.show();
         table.CourseEndlineoutput();
 
-        Scanner studentScanner = UserInput("What student do you want to select ?");
+        Scanner studentScanner = UserInput("Please select your name.");
         int studentSelection = studentScanner.nextInt();
         Student student = students.find(studentSelection);
 
-        Scanner courseScanner = UserInput("What course do you want to enroll ?");
+        Scanner courseScanner = UserInput("Please select course for enrollment.");
         int courseSelection = courseScanner.nextInt();
         Course course = courses.find(courseSelection);
 
-        Scanner semesterScanner = UserInput("What semester do you in ?");
+        Scanner semesterScanner = UserInput("Provide your Semester.");
         String semester = semesterScanner.next();
 
         return new StudentEnrollment(student, course, semester);

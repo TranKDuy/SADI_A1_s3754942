@@ -1,10 +1,10 @@
 package Header;
 
-public class HeaderMain {
+public class TOC {//Table of contents
     public CourseHeader courseheader;
     public StudentHeader studentheader;
 
-    public HeaderMain() {
+    public TOC() {
         this.courseheader = new CourseHeader();
         this.studentheader = new StudentHeader();
     }
