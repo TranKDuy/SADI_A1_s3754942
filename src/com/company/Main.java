@@ -10,17 +10,17 @@ import Menu.GuidanceLayout;
 import Menu.InterfaceConfig;
 import Menu.EnrollmentInterface;
 import Singleton.EnrollmentDataSingleton;
-
+import Users.StartSequence;
+import Users.StarSequenceSystem;
+import Users.Users;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+import Menu.Message;
 public class Main {
 
     public static void main(String[] args) {
-
         EnrollmentProcess();
     }
-
     private static void EnrollmentProcess() {
         String repeat;
         //Sample
@@ -42,10 +42,32 @@ public class Main {
         // Enrollment Interface
         EnrollmentData enrollmentDataSingleton = EnrollmentDataSingleton.getInstance();
         EnrollmentInterface enrollmentProgram = new EnrollmentInterface(enrollmentDataSingleton, guidance);
+        //  message
+        Message repeatMessage = (message) -> System.out.println(message);
+        Message invalidMessage = (message) -> System.out.println("Invalid: " + message);
+        // Main program
+        do {
+            try {
+                StarSequenceSystem StartMessage = new StartSequence();
+                StartMessage.invite(new Users());
 
+                Scanner scan = new Scanner(System.in);
+                enrollmentProgram.start();
+                repeatMessage.print("Would you like to continue? Enter Y to continue or any other key to quit: ");
+                repeat = scan.nextLine();
+            } catch (InputMismatchException e) {
+                invalidMessage.print("Please try again");
+                repeat = "Y";
+            } catch (IndexOutOfBoundsException e) {
+                invalidMessage.print("Further selection are not available");
+                repeat = "Y";
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                repeat = "Y";
+            }
 
+        } while (repeat.equalsIgnoreCase("Y"));
 
     }
-
-
 }
+
